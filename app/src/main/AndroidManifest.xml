@@ -9,15 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoHELP">
-        <activity android:name=".blood"></activity>
-        <activity android:name=".vaccine" />
-        <activity android:name=".stats" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".EachDistrictDataActivity" />
+        <activity android:name=".DistrictWiseDataActivity" />
+        <activity android:name=".EachStateDataActivity" />
+        <activity android:name=".EachCountryDataActivity" />
+        <activity android:name=".CountryWiseDataActivity" />
+        <activity android:name=".StateWiseDataActivity" />
+        <activity android:name=".WorldActivity" />
+        <activity android:name=".IndiaDataActivity" />
+        <activity android:name=".blood" />
+        <activity android:name=".vaccine" />
+        <activity android:name=".stats" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

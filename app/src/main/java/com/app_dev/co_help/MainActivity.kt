@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         Nav_View.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.Item1 -> {
-                    val intent= Intent(this,stats::class.java)
+                    val intent= Intent(this,IndiaDataActivity::class.java)
                     startActivity(intent)
                 }
 
