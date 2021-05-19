@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Co-HELP</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="messagewithlink"><a href="https://www.google.com/">Khandelwal Nursing Home</a></string>
+    <string name="messagewithlink2"><a href="https://www.google.com/">Sandeep Hospital</a></string>
+    <string name="messagewithlink3"><a href="https://www.google.com/">Pushpanjali Hospital</a></string>
+    <string name="morecenters"><a href="https://www.google.com/">Click here to see more centers in your city.</a></string>
+    <string name="cases"><a href="https://www.google.com/">Click here to see more statistics of your city.</a></string>
+    <string name="messagewithlink4"><a href="https://www.google.com/">Samparn Blood Bank</a></string>
+    <string name="messagewithlink5"><a href="https://www.google.com/">Sanjeevni Blood Bank</a></string>
+    <string name="messagewithlink6"><a href="https://www.google.com/">District Hospital Blood Bank</a></string>
+
+
+</resources>
