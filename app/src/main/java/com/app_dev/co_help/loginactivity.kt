@@ -39,7 +39,7 @@ class loginactivity : AppCompatActivity() {
         {
             val intent=Intent(this@loginactivity,MainActivity::class.java)
             startActivity(intent)
-
+            finish()
 
 
         }
