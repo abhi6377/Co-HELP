@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginactivity"
+
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:background="#C6B1A2BC"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN!"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="#0B0A0A"
+            android:drawableLeft="@drawable/email"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="10dp"
+            android:background="@drawable/edittext_background"
+            tools:ignore="MissingConstraints"
+            android:textColorHint="#9C9595"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textColor="#0B0A0A"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/key"
+            android:drawableStart="@drawable/key"
+            android:background="@drawable/edittext_background"
+            tools:ignore="MissingConstraints"
+            android:inputType="textPassword"
+            android:textColorHint="#9C9595"
+            android:hint="@string/enter_password">
+
+        </EditText>
+
+
+        <CheckBox
+            android:id="@+id/rememberMe"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Keep me logged In"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            >
+            <android.widget.Button
+
+                android:id="@+id/btn_login_loginPage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="LOGIN"
+                android:textSize="18sp"
+
+                android:textColor="@color/white"
+                android:background="@color/black">
+
+            </android.widget.Button>
+            <android.widget.Button
+                android:id="@+id/btn_signUp_loginPage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="25dp"
+
+                android:layout_marginRight="25dp"
+                android:text="REGISTER"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                >
+
+            </android.widget.Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+

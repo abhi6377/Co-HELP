@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "776125300491",
+    "firebase_url": "https://co-help-9e228-default-rtdb.firebaseio.com",
+    "project_id": "co-help-9e228",
+    "storage_bucket": "co-help-9e228.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776125300491:android:937a5dac9ed0d5d5622c0e",
+        "android_client_info": {
+          "package_name": "com.app_dev.co_help"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776125300491-6i3503tm8louu3vd7t0i1frllsnkinhf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPjhXIW3J1lUgF7Ogfw88nQ42cBAN2_dE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776125300491-6i3503tm8louu3vd7t0i1frllsnkinhf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,44 +23,39 @@
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints,UnknownId">
 
     </TextView>
 
+
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/username_nav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="7dp"
         android:text="Username"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints,UnknownId">
 
     </TextView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="24dp"
-        android:text="username123@gmail.com"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Creating Peace"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
-    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,14 @@
     <string name="messagewithlink4"><a href="https://www.google.com/">Samparn Blood Bank</a></string>
     <string name="messagewithlink5"><a href="https://www.google.com/">Sanjeevni Blood Bank</a></string>
     <string name="messagewithlink6"><a href="https://www.google.com/">District Hospital Blood Bank</a></string>
+    <string name="enter_name">Enter Name</string>
+    <string name="address">Address</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="bloodGrp">Blood Group</string>
+    <string name="Age">Age</string>
+    <string name="State">State</string>
 
 
 </resources>

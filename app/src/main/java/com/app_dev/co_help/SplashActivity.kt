@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         window.navigationBarColor = ContextCompat.getColor(this, R.color.splash)
 
         Handler().postDelayed(Runnable {
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, loginactivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_SCREEN_TIMEOUT)

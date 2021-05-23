@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="#C6B1A2BC">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER!"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:inputType="text"
+        android:textColor="#0B0A0A"
+        android:drawableLeft="@drawable/name"
+        android:drawableStart="@drawable/name"
+        android:drawablePadding="10dp"
+        android:textColorHint="#9C9595"
+        android:background="@drawable/edittext_background"
+        tools:ignore="MissingConstraints"
+        android:hint="@string/enter_name"
+        android:autofillHints="@string/enter_name">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#0B0A0A"
+        android:drawableLeft="@drawable/email"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="10dp"
+        android:background="@drawable/edittext_background"
+        tools:ignore="MissingConstraints"
+        android:hint="@string/enter_email"
+        android:textColorHint="#9C9595"
+        android:inputType="textEmailAddress"
+        android:autofillHints="@string/enter_email">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:textColor="#0B0A0A"
+        android:layout_marginBottom="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/key"
+        android:drawableStart="@drawable/key"
+        android:background="@drawable/edittext_background"
+        tools:ignore="MissingConstraints"
+        android:inputType="textPassword"
+        android:textColorHint="#9C9595"
+        android:hint="@string/enter_password"
+        android:autofillHints="@string/enter_password">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:textColor="#0B0A0A"
+        android:layout_marginBottom="5dp"
+        android:textColorHint="#9C9595"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/key"
+        android:drawableStart="@drawable/key"
+        android:background="@drawable/edittext_background"
+        tools:ignore="MissingConstraints"
+        android:inputType="textPassword"
+        android:hint="@string/confirm_password"
+        android:autofillHints="@string/confirm_password">
+
+    </EditText>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+        <android.widget.Button
+            android:id="@+id/btn_signUp"
+            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_margin="20dp"
+            android:text="REGISTER"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@color/black">
+
+        </android.widget.Button>
+        <android.widget.Button
+            android:id="@+id/btn_login"
+            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_margin="20dp"
+            android:text="LOGIN"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            >
+
+        </android.widget.Button>
+    </LinearLayout>
+
+</LinearLayout>

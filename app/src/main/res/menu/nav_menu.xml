@@ -24,7 +24,7 @@
 
     <group android:id="@+id/grp2">
         <item
-            android:id="@+id/Item4"
+            android:id="@+id/LogOut"
             android:title="Log Out"
             app:showAsAction="always">
 
