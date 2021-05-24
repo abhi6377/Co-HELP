@@ -1,111 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+
     android:orientation="vertical"
     tools:context=".vaccine"
-    android:background="#D1C2E6">
+   >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vaccination Centers near you"
-        android:textStyle="bold"
-        android:textSize="38sp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black">
-
-
-    </TextView>
     <EditText
-        android:id="@+id/registerEmail"
-        android:layout_marginTop="30dp"
-        android:layout_width="350dp"
+        android:id="@+id/idEdtPinCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:drawableLeft="@drawable/address"
-        android:drawableStart="@drawable/address"
-        android:drawablePadding="10dp"
-        android:hint="Agra"
-        android:padding="18dp"
-        android:inputType="textEmailAddress" >
+        android:layout_margin="15dp"
+        android:layout_toStartOf="@id/idBtnSearch"
+        android:layout_toLeftOf="@id/idBtnSearch"
+        android:hint="Enter PinCode"
+        android:inputType="number" />
 
-    </EditText>
-
-    <TextView
+    <!--button for searchng the data-->
+    <Button
+        android:id="@+id/idBtnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/messagewithlink"
-        android:layout_marginTop="40dp"
-        android:textSize="20sp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="35dp"
-        android:textColorLink="@color/black"
-        />
-    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
+        android:text="Search"
+        android:textAllCaps="false" />
+
+    <!--progress bar for loading indicator-->
+    <ProgressBar
+        android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="29dp"
-        android:layout_marginRight="20dp"
-        android:text="3/27, Mahatma Gandhi Rd, khandelwal Colony, Pratap Pura, Civil Lines, Agra, Uttar Pradesh 282001"
-        >
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
-    </TextView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/messagewithlink2"
-        android:layout_marginTop="40dp"
-        android:textSize="20sp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="35dp"
-        android:textColorLink="@color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="29dp"
-        android:text="65, M.G Rd 2, Saket Colony, Shahganj, Agra, Uttar Pradesh 282010"
-        >
-
-    </TextView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/messagewithlink3"
-        android:layout_marginTop="40dp"
-        android:textSize="20sp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="35dp"
-        android:textColorLink="@color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="29dp"
-        android:layout_marginRight="20dp"
-        android:text="Pushpanjali Palace, Delhi Gate, Agra, Uttar Pradesh 282002"
-        >
-
-    </TextView>
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/morecenters"
-    android:layout_marginTop="30sp"
-    android:textColorLink="@color/purple_700"
-    >
-
-</TextView>
-
-
-</LinearLayout>
+    <!--recycler view for displaying results in the form of list-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/centersRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEdtPinCode"
+        tools:listitem="@layout/center_rv_item" />
+</RelativeLayout>
