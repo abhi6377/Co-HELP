@@ -22,7 +22,7 @@ class registerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
         auth=FirebaseAuth.getInstance()
 
-        btn_login.setOnClickListener {
+        backtoLogin.setOnClickListener {
             val intent= Intent(this@registerActivity, loginactivity::class.java)
             startActivity(intent)
         }
@@ -69,7 +69,6 @@ class registerActivity : AppCompatActivity() {
                     val hashMap:HashMap<String,String> = HashMap()
                     hashMap.put("userId",userId)
                     hashMap.put("userName",userName)
-//                    hashMap.put("profileImage","")
 
                     databaseReference.setValue(hashMap).addOnCompleteListener(this){
                         if(it.isSuccessful){
@@ -80,6 +79,7 @@ class registerActivity : AppCompatActivity() {
                             etConfirmPassword.setText("")
                             val intent=Intent(this@registerActivity, loginactivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     }
 

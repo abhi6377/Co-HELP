@@ -10,8 +10,10 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_loginactivity.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header.*
 
@@ -19,15 +21,18 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle : ActionBarDrawerToggle
     lateinit var preferences: SharedPreferences
     private lateinit var auth: FirebaseAuth
+    private lateinit var mDatabase:FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+//        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
+
+        mDatabase= FirebaseDatabase.getInstance()
+        databaseReference=mDatabase!!.reference!!.child("Users")
         auth = FirebaseAuth.getInstance()
-//        val nameUser: String = auth.currentUser?.displayName.toString()
-//        username_nav.text=nameUser
 
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
@@ -54,12 +59,16 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.LogOut -> {
-                    val editor:SharedPreferences.Editor=preferences.edit()
-                    editor.putBoolean("CHECKBOX",false)
-                    editor.clear()
-                    editor.apply()
+//                    val editor:SharedPreferences.Editor=preferences.edit()
+//                    editor.putBoolean("CHECKBOX",false)
+//
+//                    editor.clear()
+//                    editor.apply()
+                    FirebaseAuth.getInstance().signOut()
 
-                    val intent= Intent(this@MainActivity,loginactivity::class.java)
+                    val intent= Intent(this,loginactivity::class.java)
+                    intent.putExtra("remember",false)
+
                     startActivity(intent)
                     finish()
 
@@ -77,4 +86,28 @@ class MainActivity : AppCompatActivity() {
     }
     return super.onOptionsItemSelected(item)
 }
-}
+    override fun onStart() {
+        super.onStart()
+
+        if(FirebaseAuth.getInstance().currentUser != null)
+        {
+        val mUser = auth.currentUser
+        val mUserReference = databaseReference.child(mUser!!.uid)
+
+
+
+        mUserReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                username_nav!!.text = snapshot.child("userName").value as String
+
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+         }
+        else
+        {
+            val intent= Intent(applicationContext,loginactivity::class.java)
+            startActivity(intent)
+
+        }
+}}

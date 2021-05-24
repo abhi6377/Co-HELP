@@ -18,6 +18,7 @@
     <string name="bloodGrp">Blood Group</string>
     <string name="Age">Age</string>
     <string name="State">State</string>
+    <string name="loginPage"><b><u>Click here if already registered.</u></b></string>
 
 
 </resources>
