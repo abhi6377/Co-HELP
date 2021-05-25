@@ -17,7 +17,7 @@
 
     <item
         android:id="@+id/Item3"
-        android:title="Vaccination Centers">
+        android:title="Vaccine Availability">
 
     </item>
     </group>

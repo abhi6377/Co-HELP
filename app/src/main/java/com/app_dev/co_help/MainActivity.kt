@@ -3,6 +3,7 @@ package com.app_dev.co_help
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -27,9 +28,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
-
-
         mDatabase= FirebaseDatabase.getInstance()
         databaseReference=mDatabase!!.reference!!.child("Users")
         auth = FirebaseAuth.getInstance()
@@ -39,6 +37,40 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        call1.setOnClickListener {
+            val intent= Intent(Intent.ACTION_DIAL)
+            val no:String =number1.text.toString()
+            val temp :String = "tel:$no"
+            intent.data = Uri.parse(temp)
+            startActivity(intent);
+        }
+
+        call2.setOnClickListener {
+            val intent= Intent(Intent.ACTION_DIAL)
+            val no:String =number2.text.toString()
+            val temp :String = "tel:$no"
+            intent.data = Uri.parse(temp)
+            startActivity(intent);
+        }
+
+        call3.setOnClickListener {
+            val intent= Intent(Intent.ACTION_DIAL)
+            val no:String =number3.text.toString()
+            val temp :String = "tel:$no"
+            intent.data = Uri.parse(temp)
+            startActivity(intent);
+        }
+
+        call4.setOnClickListener {
+            val intent= Intent(Intent.ACTION_DIAL)
+            val no:String =number4.text.toString()
+            val temp :String = "tel:$no"
+            intent.data = Uri.parse(temp)
+            startActivity(intent);
+        }
+
+
 
         Nav_View.setNavigationItemSelectedListener {
             when (it.itemId) {
@@ -106,7 +138,7 @@ class MainActivity : AppCompatActivity() {
          }
         else
         {
-            val intent= Intent(applicationContext,loginactivity::class.java)
+            val intent= Intent(this,loginactivity::class.java)
             startActivity(intent)
 
         }

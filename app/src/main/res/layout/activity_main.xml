@@ -5,26 +5,259 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ED9DB3CA"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7A9DB3CA"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Activity"
+            android:text="WELCOME TO CO-HELP"
+            android:gravity="center_horizontal"
             android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:textColor="@color/black"
+            android:textStyle="bold">
 
         </TextView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="150dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Health Ministry Helpline    "
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/number1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="1075"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/call1"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/call"
+                android:background="@drawable/shapebutton"
+                >
+
+            </ImageButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape"
+            android:gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="RtlHardcoded">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Child Helpline Number    "
+                    android:textSize="17sp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/number2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="1098"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/call2"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/call"
+                android:background="@drawable/shapebutton">
+
+            </ImageButton>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape"
+            android:gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Mental Health Helpline    "
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/number3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="08046110007"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/call3"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/call"
+                android:background="@drawable/shapebutton">
+
+            </ImageButton>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Senior Citizens Helpline    "
+                android:textSize="17sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/number4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="14567"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/call4"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70dp"
+
+                android:gravity="center_vertical"
+                android:src="@drawable/call"
+                android:background="@drawable/shapebutton">
+
+            </ImageButton>
+    </LinearLayout>
+
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/Nav_View"

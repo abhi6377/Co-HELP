@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/helpline1"
+            android:title="Helpline1"
+            android:icon="@drawable/helpline"
+            >
+
+        </item>
+
+        <item
+            android:id="@+id/helpline2"
+            android:title="Helpline2"
+            android:icon="@drawable/helpline"
+            >
+
+        </item>
+
+    <item
+        android:id="@+id/helpline3"
+        android:title="Helpline3"
+        android:icon="@drawable/helpline"
+        >
+
+    </item>
+        <item
+            android:id="@+id/helpline4"
+            android:title="Helpline4"
+            android:icon="@drawable/helpline"
+            >
+
+        </item>
+
+
+    </group>
+</menu>
