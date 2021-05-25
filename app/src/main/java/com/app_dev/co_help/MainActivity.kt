@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.Item2 -> {
-                    val intent= Intent(this,blood::class.java)
+                    val intent= Intent(this,BloodSignInACtivity::class.java)
                     startActivity(intent)
                 }
 
