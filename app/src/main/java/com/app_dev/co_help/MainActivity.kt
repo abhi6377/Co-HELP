@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
 
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                username_nav!!.text = snapshot.child("userName").value as String
+                username_nav!!.text = snapshot.child("userName").value as String?
 
             }
             override fun onCancelled(databaseError: DatabaseError) {}

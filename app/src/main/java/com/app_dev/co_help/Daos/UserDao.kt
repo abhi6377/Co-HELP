@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class UserDao {
     private val db = FirebaseFirestore.getInstance()
-    private val usersCollection = db.collection("users")
+    private val usersCollection = db.collection("BloodUsers")
 
     @SuppressLint("RestrictedApi")
     fun addUser(user: com.app_dev.co_help.Models.User) {
