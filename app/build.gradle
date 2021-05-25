@@ -99,14 +99,19 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.firebaseui:firebase-ui-auth:4.1.2'
-    implementation 'com.firebaseui:firebase-ui-firestore:4.1.2'
+    implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
+    implementation 'com.firebaseui:firebase-ui-firestore:7.1.1'
 
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.firebaseui:firebase-ui-firestore:6.4.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:7.1.1'
+        // Import the BoM for the Firebase platform
+        implementation platform('com.google.firebase:firebase-bom:28.0.1')
+
+
+        // Also declare the dependency for the Google Play services library and specify its version
 
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 

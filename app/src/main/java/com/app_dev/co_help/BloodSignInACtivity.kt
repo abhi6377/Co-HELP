@@ -41,7 +41,7 @@ class BloodSignInACtivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken("776125300491-6i3503tm8louu3vd7t0i1frllsnkinhf.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
@@ -115,7 +115,7 @@ class BloodSignInACtivity : AppCompatActivity() {
             val usersDao = UserDao()
             usersDao.addUser(user)
 
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,MainFeedActivity::class.java)
             startActivity(intent)
             finish()
         }else{

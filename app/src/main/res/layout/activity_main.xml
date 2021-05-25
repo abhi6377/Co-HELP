@@ -16,7 +16,6 @@
         android:gravity="bottom"
         android:orientation="vertical"
         android:layout_marginBottom="20dp"
-
         >
         <TextView
             android:layout_width="wrap_content"

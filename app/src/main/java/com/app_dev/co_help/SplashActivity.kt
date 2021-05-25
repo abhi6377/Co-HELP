@@ -9,7 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 
 class SplashActivity : AppCompatActivity() {
-    private val SPLASH_SCREEN_TIMEOUT: Long = 2000
+    private val SPLASH_SCREEN_TIMEOUT: Long = 1600
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
