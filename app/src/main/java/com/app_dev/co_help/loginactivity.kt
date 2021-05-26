@@ -1,24 +1,17 @@
 package com.app_dev.co_help
 
-import android.content.Context
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.text.TextUtils
-import android.view.View
-import android.widget.CheckBox
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.core.Constants
-import kotlinx.android.synthetic.main.activity_loginactivity.*
-import kotlinx.android.synthetic.main.activity_loginactivity.Email
-import kotlinx.android.synthetic.main.activity_loginactivity.Password
-import kotlinx.android.synthetic.main.activity_loginactivity.btn_login_loginPage
-import kotlinx.android.synthetic.main.activity_loginactivity.btn_signUp_loginPage
 import kotlinx.android.synthetic.main.activity_loginactivity.*
 import kotlinx.android.synthetic.main.nav_header.*
+
 
 class loginactivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -51,6 +44,7 @@ class loginactivity : AppCompatActivity() {
 
                             val intent = Intent(this@loginactivity, MainActivity::class.java)
                             startActivity(intent)
+                            finish()
 
                         } else {
                             Toast.makeText(
@@ -72,4 +66,29 @@ class loginactivity : AppCompatActivity() {
         }
 
 }
+//    private var doubleBackToExitPressedOnce = false
+//    override fun onBackPressed() {
+//        if (doubleBackToExitPressedOnce) {
+//            super.onBackPressed()
+//            return
+//        }
+//
+//        this.doubleBackToExitPressedOnce = true
+//        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+//
+//        android.os.Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+//    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
+            .setMessage("Are you sure?")
+            .setPositiveButton("yes", DialogInterface.OnClickListener { dialog, which ->
+                val intent = Intent(Intent.ACTION_MAIN)
+                intent.addCategory(Intent.CATEGORY_HOME)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }).setNegativeButton("no", null).show()
+    }
+
 }

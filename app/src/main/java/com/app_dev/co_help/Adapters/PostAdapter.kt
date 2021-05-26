@@ -35,12 +35,12 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) : FirestoreRecyclerAd
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int, model: Post) {
-        holder.postText.text = model.bloodGr
-        holder.postCity.text = model.city
-        holder.userText.text = model.createdBy.displayName
+        holder.postText.text = model.GetBloodGr()
+        holder.postCity.text = model.GetCity()
+        holder.userText.text = model.GetCreatedBy().displayName.toString()
         holder.createdAt.text = Utils.getTimeAgo(model.createdAt)
-        holder.postGender.text = model.gender
-        holder.userAge.text = model.age
+        holder.postGender.text = model.GetGender().toString()
+        holder.userAge.text = model.GetAge()
 
     }
 

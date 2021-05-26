@@ -7,15 +7,149 @@
     tools:context=".BloodSignInACtivity">
 
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/signInBtn"
-        android:layout_width="wrap_content"
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/signInBtn"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        -->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:foregroundGravity="center"-->
+<!--        />-->
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#75bec1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:src="@drawable/ic_wave_1_"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/view" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="MissingConstraints">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WELCOME"
+        android:gravity="center_horizontal"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TO"
+        android:gravity="center_horizontal"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLASMA DONATION SECTION"
+        android:gravity="center_horizontal"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's Get Started!"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify yourself and go ahead.."
+        android:gravity="center_horizontal"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/signInBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="18dp"
+        android:background="#d3d3d3"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:foregroundGravity="center"/>
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:layout_editor_absoluteX="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/black"
+                    android:padding="3dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/googleg_standard_color_18"
+                       />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Sign in with Google"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/removebg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+
 
     <ProgressBar
         android:id="@+id/progressbar"
