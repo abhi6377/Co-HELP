@@ -1,5 +1,8 @@
 package com.app_dev.co_help
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -12,7 +15,9 @@ import com.app_dev.co_help.Models.Post
 import com.google.android.gms.tasks.OnCompleteListener
 import kotlinx.android.synthetic.main.activity_search.*
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
+
+    /* CHANGED BY ME 10 - added interface , implemented its member and changed adapter line 72*/
 
     private lateinit var sAdapter: SearchAdapter
     private lateinit var searchList: ArrayList<Post>
@@ -64,7 +69,7 @@ class SearchActivity : AppCompatActivity() {
             }
         })
 
-        sAdapter = SearchAdapter(searchList)
+        sAdapter = SearchAdapter(searchList,this)
 
         recyclerViewS.adapter = sAdapter
         recyclerViewS.layoutManager = LinearLayoutManager(this)
@@ -74,6 +79,26 @@ class SearchActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    override fun onMailClickedS(email: String?) {
+        Toast.makeText(this,"EmailS: $email",Toast.LENGTH_SHORT).show()
+        var intent = Intent(this,SendEmailActivity::class.java)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Post Creator's Email")
+        builder.setMessage("Please copy this email of the respective post creater to help them.\nEmail: $email")
+            .setPositiveButton("Done",
+                DialogInterface.OnClickListener { dialog, id ->
+                    intent.putExtra("rEmail",email)
+                    startActivity(intent)
+                })
+            .setNegativeButton("Cancel",
+                DialogInterface.OnClickListener { dialog, id ->
+                    startActivity(Intent(this,SearchActivity::class.java))
+                })
+        builder.create()
+
+        builder.show()
     }
 
 }

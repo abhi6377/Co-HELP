@@ -16,14 +16,14 @@ class PostDao {
     val postCollections = db.collection("posts")
     val auth = Firebase.auth
 
-    fun addPost(bg: String, city: String, age:String, gender: String) {
+    fun addPost(bg: String, city: String, age:String, gender: String, email:String?) {     /* CHANGED BY ME 3 -added email*/
         GlobalScope.launch {
             val currentUserId = auth.currentUser!!.uid
             val userDao = UserDao()
             val user = userDao.getUserById(currentUserId).await().toObject(User::class.java)!!
 
             val currentTime = System.currentTimeMillis()
-            val post = Post(bg, city, user, currentTime, gender ,age)
+            val post = Post(bg, city, user, currentTime, gender ,age,email)
 
             postCollections.document().set(post)
         }

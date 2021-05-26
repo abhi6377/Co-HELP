@@ -67,12 +67,14 @@ class BloodSignInACtivity : AppCompatActivity() {
     }
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>){
         try {
-            val account: GoogleSignInAccount? =completedTask.getResult(ApiException::class.java)
-            if (account != null) {
-                UpdateUI(account)
+            val account: GoogleSignInAccount =completedTask?.getResult(ApiException::class.java)  //Added ? after completeTask
+            if (account != null){
+            UpdateUI(account)
             }
         } catch (e: ApiException){
+
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
+            /* ERROR HERE - displaying Toast rather than doing GSignin */
         }
     }
     private fun UpdateUI(account: GoogleSignInAccount){
@@ -87,7 +89,8 @@ class BloodSignInACtivity : AppCompatActivity() {
                     val user = com.app_dev.co_help.Models.User(
                         firebaseUser.uid,
                         firebaseUser.displayName.toString(),
-                        firebaseUser.photoUrl.toString()
+                        firebaseUser.photoUrl.toString(),
+                        firebaseUser.email!!     /* CHANGED BY ME 1*/
                     )
                     val usersDao = UserDao()
                     usersDao.addUser(user)
