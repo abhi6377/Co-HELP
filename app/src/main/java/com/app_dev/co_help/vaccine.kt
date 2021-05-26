@@ -3,6 +3,7 @@ package com.app_dev.co_help
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.app.DatePickerDialog
+import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -15,6 +16,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.app_dev.co_help.Adapters.CenterRVAdapter
+import kotlinx.android.synthetic.main.activity_vaccine.*
 import org.json.JSONException
 import java.util.*
 import kotlin.collections.ArrayList
@@ -42,6 +44,9 @@ class vaccine : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vaccine)
 
+        registerSlot.movementMethod = LinkMovementMethod.getInstance()
+
+
         supportActionBar!!.title = "Vaccination Centers "
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
@@ -50,50 +55,34 @@ class vaccine : AppCompatActivity() {
         pinCodeEdt = findViewById(R.id.idEdtPinCode)
         centersRV = findViewById(R.id.centersRV)
         loadingPB = findViewById(R.id.idPBLoading)
+
         centerList = ArrayList<CenterRvModal>()
 
-        // on below line we are adding on
-        // click listener to our button.
         searchButton.setOnClickListener {
 
-            // inside on click listener we are getting data from
-            // edit text and creating a val for ite on below line.
             val pinCode = pinCodeEdt.text.toString()
 
-            // on below line we are validating
-            // our pin code as 6 digit or not.
             if (pinCode.length != 6) {
 
-                // this method is called when users enter invalid pin code.
                 Toast.makeText(this@vaccine, "Please enter valid pin code", Toast.LENGTH_SHORT).show()
             } else {
 
-                // if the pincode is correct.
-                // first of all we are clearing our array list this
-                // will clear the data in it if already present.
                 (centerList as ArrayList<CenterRvModal>).clear()
 
-                // on below line we are getting instance of our calendar.
                 val c = Calendar.getInstance()
 
-                // on below line we are getting our current year, month and day.
                 val year = c.get(Calendar.YEAR)
                 val month = c.get(Calendar.MONTH)
                 val day = c.get(Calendar.DAY_OF_MONTH)
 
-                // on below line we are creating our date picker dialog.
                 val dpd = DatePickerDialog(
                     this,
                     DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                         // after that we are making our progress bar as visible.
                         loadingPB.setVisibility(View.VISIBLE)
 
-                        // on below line we are creating a date string for our date
                         val dateStr: String = """$dayOfMonth - ${monthOfYear + 1} - $year"""
 
-                        // on below line we are calling a method to get
-                        // the appointment info for vaccination centers
-                        // and we are passing our pin code to it.
                         getAppointments(pinCode, dateStr)
                     },
                     year,
@@ -103,6 +92,7 @@ class vaccine : AppCompatActivity() {
                 // calling a method to display
                 // our datepicker dialog.
                 dpd.show()
+
             }
         }
 

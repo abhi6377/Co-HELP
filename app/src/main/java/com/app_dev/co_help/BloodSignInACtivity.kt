@@ -109,102 +109,10 @@ class BloodSignInACtivity : AppCompatActivity() {
             startActivity(Intent(this, MainFeedActivity::class.java))
             finish()
         }
-    }
-
-
-//    private fun handleSignInResult(task: Task<GoogleSignInAccount>?) {
-//
-//        try {
-//            val account = task?.getResult(ApiException::class.java)!!
-//
-//            Log.d(ContentValues.TAG,"firebaseAuthWithGoogle"+account.id)
-//            firebaseAuthWithGoogle(account.idToken!!)
-//
-//        }catch (e: ApiException){
-//            Log.w(ContentValues.TAG,"signInResult:Failed code" + e.statusCode)
-//        }
-//    }
-//
-//    private fun firebaseAuthWithGoogle(idToken: String) {
-//
-//        val credential = GoogleAuthProvider.getCredential(idToken,null)
-//
-//        GlobalScope.launch(Dispatchers.IO) {
-//            runOnUiThread{
-//                signInBtn.visibility = View.GONE
-//                progressbar.visibility = View . VISIBLE
-//            }
-//
-//            val auth = auth.signInWithCredential(credential).await()
-//            val firebaseUser = auth.user
-//            withContext(Dispatchers.Main){
-//                updateUI(firebaseUser)
-//            }
-//        }
-//
-//    }
-//
-//    @SuppressLint("RestrictedApi")
-//    private fun updateUI(firebaseUser: FirebaseUser?) {
-//        if(firebaseUser!=null){
-//
-//            val user = com.app_dev.co_help.Models.User(firebaseUser.uid, firebaseUser.displayName , firebaseUser.photoUrl.toString())
-//            val usersDao = UserDao()
-//            usersDao.addUser(user)
-//
-//            val intent = Intent(this,MainFeedActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }else{
-//            runOnUiThread {
-//
-//                signInBtn.visibility = View.VISIBLE
-//                progressbar.visibility = View.GONE
-//            }
-//
-//        }
-//    }
-
-    object SavedPreference {
-
-        const val EMAIL= "email"
-        const val USERNAME="username"
-
-        private  fun getSharedPreference(ctx: android.content.Context): SharedPreferences? {
-            return PreferenceManager.getDefaultSharedPreferences(ctx)
-        }
-
-        private fun  editor(context: android.content.Context, const:String, string: String){
-            getSharedPreference(
-                context
-            )?.edit()?.putString(const,string)?.apply()
-        }
-
-        fun getEmail(context: android.content.Context)= getSharedPreference(
-            context
-        )?.getString(EMAIL,"")
-
-        fun setEmail(context: android.content.Context, email: String){
-            editor(
-                context,
-                EMAIL,
-                email
-            )
-        }
-
-        fun setUsername(context: android.content.Context, username:String){
-            editor(
-                context,
-                USERNAME,
-                username
-            )
-        }
-
-        fun getUsername(context: android.content.Context) = getSharedPreference(
-            context
-        )?.getString(USERNAME,"")
 
     }
+
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

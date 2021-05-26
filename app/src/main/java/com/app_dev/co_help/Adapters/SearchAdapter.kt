@@ -30,12 +30,15 @@ class SearchAdapter(private val searchList: ArrayList<Post>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
+
         holder.postText.text = searchList[position].bloodGr
         holder.postCity.text = searchList[position].city
         holder.userText.text = searchList[position].createdBy.displayName
         holder.createdAt.text = Utils.getTimeAgo(searchList[position].createdAt)
         holder.postGender.text = searchList[position].gender
         holder.userAge.text = searchList[position].age
+
+
 
     }
 

@@ -31,6 +31,7 @@
         android:text="Search"
         android:textAllCaps="false" />
 
+
     <!--progress bar for loading indicator-->
     <ProgressBar
         android:id="@+id/idPBLoading"
@@ -39,11 +40,47 @@
         android:layout_centerInParent="true"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/registerSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registerSlot"
+        android:textColorLink="@color/cardBg"
+        android:layout_marginTop="73dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/underline"
+
+        >
+    </TextView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/vaccine_image">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's get Vaccinated !"
+
+        android:textSize="35sp"
+        android:layout_marginTop="510dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:foregroundGravity="bottom"
+        >
+
+    </TextView>
     <!--recycler view for displaying results in the form of list-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/centersRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idEdtPinCode"
-        tools:listitem="@layout/center_rv_item" />
+
+        tools:listitem="@layout/center_rv_item"
+        />
 </RelativeLayout>

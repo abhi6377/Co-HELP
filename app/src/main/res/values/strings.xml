@@ -19,6 +19,8 @@
     <string name="Age">Age</string>
     <string name="State">State</string>
     <string name="loginPage"><b><u>Click here if already registered.</u></b></string>
+    <string name="registerPage"><b><u>Click here if you have not registered.</u></b></string>
+    <string name="registerSlot"><a href="https://www.cowin.gov.in/home"><u>Click here to register your slot.</u></a></string>
 
 
 </resources>
