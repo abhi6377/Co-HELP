@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ED9DB3CA"
+    android:background="@drawable/main_image"
     tools:context=".MainActivity">
 
 
@@ -15,18 +15,18 @@
         android:background="#7A9DB3CA"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WELCOME TO CO-HELP"
-            android:gravity="center_horizontal"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:textStyle="bold">
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="WELCOME TO CO-HELP"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:textSize="40sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold">-->
 
-        </TextView>
+<!--        </TextView>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:background="@drawable/shape"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="150dp">
+            android:layout_marginTop="170dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -94,7 +94,7 @@
             android:gravity="right"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             tools:ignore="RtlHardcoded">
 
             <LinearLayout
@@ -151,7 +151,7 @@
             android:gravity="right"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -205,7 +205,7 @@
             android:orientation="horizontal"
             android:background="@drawable/shape"
             android:gravity="right"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 

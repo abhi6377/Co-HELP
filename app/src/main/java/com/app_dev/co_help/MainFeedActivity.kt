@@ -24,6 +24,8 @@ class MainFeedActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
+        val googleEmail:String ?=intent.getStringExtra("googleEmail")
+
         fab.setOnClickListener{
             val intent = Intent(this,CreatePostActivity::class.java)
             startActivity(intent)
@@ -32,6 +34,7 @@ class MainFeedActivity : AppCompatActivity() {
 
         btn_Search.setOnClickListener{
             startActivity(Intent(this,SearchActivity::class.java))
+            intent.putExtra("googleEmail",googleEmail)
 
         }
     }

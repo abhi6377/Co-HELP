@@ -1,11 +1,9 @@
 package com.app_dev.co_help
 
 import android.content.Intent
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.app_dev.co_help.Daos.UserDao
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -13,12 +11,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.google.android.material.internal.ContextUtils.getActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.core.Context
 import kotlinx.android.synthetic.main.activity_blood_sign_in.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 class BloodSignInACtivity : AppCompatActivity() {
 
@@ -75,16 +71,16 @@ class BloodSignInACtivity : AppCompatActivity() {
             if (account != null) {
                 UpdateUI(account)
             }
-        } catch (e:ApiException){
-            Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show()
+        } catch (e: ApiException){
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
         }
     }
     private fun UpdateUI(account: GoogleSignInAccount){
-        val credential= GoogleAuthProvider.getCredential(account.idToken,null)
+        val credential= GoogleAuthProvider.getCredential(account.idToken, null)
 
         val firebaseUser = auth.currentUser
 
-        auth.signInWithCredential(credential).addOnCompleteListener {task->
+        auth.signInWithCredential(credential).addOnCompleteListener { task->
             if(task.isSuccessful) {
 
                 if(firebaseUser!=null) {
@@ -106,7 +102,13 @@ class BloodSignInACtivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(GoogleSignIn.getLastSignedInAccount(this)!=null){
+            var personEmail: String? =null
+            val acct = GoogleSignIn.getLastSignedInAccount(this)
+            if (acct != null) {
+                personEmail= acct.email.toString()
+            }
             startActivity(Intent(this, MainFeedActivity::class.java))
+            intent.putExtra("googleEmail",personEmail)
             finish()
         }
 

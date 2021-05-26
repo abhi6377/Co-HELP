@@ -26,6 +26,8 @@ class SearchActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
+        intent.getStringExtra("googleEmail")
+
         filter(searchCityS.text)
         btn_SearchS.setOnClickListener{
             filter(searchCityS.text)
