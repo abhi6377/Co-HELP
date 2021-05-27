@@ -6,6 +6,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app_dev.co_help.Adapters.PostAdapter
@@ -22,6 +25,12 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
     private lateinit var postDao: PostDao
     private lateinit var userEmail: String
 
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
+    private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
+    private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
+    private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
+
+    private var clicked : Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_feed)
@@ -31,6 +40,10 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         val googleEmail: String? = intent.getStringExtra("googleEmail")
+
+        fabMain.setOnClickListener{
+            onMenuClicked()
+        }
 
         fab.setOnClickListener {
             val intent = Intent(this, CreatePostActivity::class.java)
@@ -43,6 +56,35 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
             intent.putExtra("googleEmail", googleEmail)
 
         }
+    }
+
+    private fun onMenuClicked() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        clicked = !clicked
+    }
+
+    private fun setAnimation(clicked: Boolean) {
+        if(!clicked){
+            btn_Search.startAnimation(fromBottom)
+            fab.startAnimation(fromBottom)
+            fabMain.startAnimation(rotateOpen)
+        }else{
+            btn_Search.startAnimation(toBottom)
+            fab.startAnimation(toBottom)
+            fabMain.startAnimation(rotateClose)
+        }
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if(!clicked){
+            fab.visibility = View.VISIBLE
+            btn_Search.visibility = View.VISIBLE
+        }else{
+            fab.visibility = View.INVISIBLE
+            btn_Search.visibility = View.INVISIBLE
+        }
+
     }
 
     private fun setUpRecyclerView() {
