@@ -42,6 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
@@ -52,8 +53,9 @@
                     android:textStyle="bold"
                     android:text="Health Ministry Helpline    "
                     android:textSize="17sp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+
                     >
 
                 </TextView>
@@ -63,9 +65,10 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="1075"
+                    android:layout_gravity="center"
                     android:textSize="12sp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+
                     >
 
                 </TextView>
@@ -92,6 +95,7 @@
             android:orientation="horizontal"
             android:background="@drawable/shape"
             android:gravity="right"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
@@ -102,15 +106,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp"
+                android:layout_gravity="center"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Child Helpline Number    "
+                    android:text="   Child Helpline Number     "
                     android:textSize="17sp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="13dp"
-                    android:layout_marginRight="10dp"
+
                     >
 
                 </TextView>
@@ -120,6 +126,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="1098"
+                    android:layout_gravity="center"
                     android:textSize="12sp"
                     android:layout_marginLeft="14dp"
                     android:layout_marginRight="10dp"
@@ -158,15 +165,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="10dp"
+                android:layout_gravity="center"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Mental Health Helpline    "
+                    android:text="Mental Health Helpline   "
                     android:textSize="17sp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+
                     >
 
                 </TextView>
@@ -176,6 +185,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="08046110007"
+                    android:layout_gravity="center"
                     android:textSize="12sp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -214,6 +224,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             >
@@ -224,7 +235,7 @@
                 android:text="Senior Citizens Helpline    "
                 android:textSize="17sp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
                 >
 
             </TextView>
@@ -236,6 +247,7 @@
                 android:text="14567"
                 android:textSize="12sp"
                 android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 >
 

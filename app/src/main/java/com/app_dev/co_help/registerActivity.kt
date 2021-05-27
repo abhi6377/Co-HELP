@@ -27,7 +27,7 @@ class registerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_signUp.setOnClickListener {
+        btn_login_loginPage.setOnClickListener {
             val username = etName.text.toString()
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()

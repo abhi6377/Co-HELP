@@ -114,6 +114,7 @@
             android:background="@drawable/edittext_round_new_rg"
             android:drawableLeft="@drawable/ic_baseline_vpn_key_g_24"
             android:drawablePadding="10dp"
+            android:inputType="textPassword"
             android:hint="Confirm Password"
             android:paddingLeft="14dp" />
 
