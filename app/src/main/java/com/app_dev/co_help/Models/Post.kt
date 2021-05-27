@@ -14,7 +14,7 @@ class Post (
 
     fun GetCity(): String {return city}
 
-    fun GetCreatedBy(): User {return createdBy}
+    fun GetCreatedBy(): String? {return createdBy.displayName}
 
     fun GetCreatedAt(): Long {return createdAt}
 
