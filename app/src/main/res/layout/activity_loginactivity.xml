@@ -10,17 +10,18 @@
 
         >
 
+
     <ImageView
         android:id="@+id/img2"
-        android:layout_width="496dp"
-        android:layout_height="434dp"
+        android:layout_width="451dp"
+        android:layout_height="380dp"
         android:src="@drawable/fightvirus"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-56dp" />
-
+        android:scaleType="fitXY"
+        app:layout_constraintVertical_bias="0.236" />
 
     <TextView
         android:id="@+id/textView"
