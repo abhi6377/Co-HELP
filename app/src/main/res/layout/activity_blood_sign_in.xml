@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:src="@drawable/ic_wave"
+        android:src="@drawable/ic_wave_1_"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
@@ -139,7 +139,6 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:scaleType="fitXY"
-
             android:src="@drawable/removebg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
