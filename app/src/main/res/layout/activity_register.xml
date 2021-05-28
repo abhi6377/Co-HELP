@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="276dp"
         android:layout_marginRight="276dp"
-        android:layout_marginBottom="588dp"
+        android:layout_marginBottom="624dp"
         android:src="@drawable/ic_blobregup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -34,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.057" />
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="340dp"
@@ -44,8 +45,7 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
-
+        app:layout_constraintVertical_bias="0.232" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -66,37 +66,41 @@
         android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/etName"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
             android:drawableLeft="@drawable/ic_baseline_person_24_g"
             android:drawablePadding="10dp"
             android:hint="Name"
-            android:paddingLeft="14dp" />
+            android:paddingLeft="14dp"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/etEmail"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
             android:drawableStart="@drawable/ic_baseline_email_g_24"
+            android:drawableLeft="@drawable/ic_baseline_email_g_24"
             android:drawablePadding="10dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:paddingLeft="14dp"
-            android:drawableLeft="@drawable/ic_baseline_email_g_24" />
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="250dp"
+
+            android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
@@ -104,23 +108,25 @@
             android:drawablePadding="10dp"
             android:hint="Password"
             android:inputType="textPassword"
-            android:paddingLeft="14dp" />
+            android:paddingLeft="14dp"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/etConfirmPassword"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
             android:drawableLeft="@drawable/ic_baseline_vpn_key_g_24"
             android:drawablePadding="10dp"
-            android:inputType="textPassword"
             android:hint="Confirm Password"
-            android:paddingLeft="14dp" />
+            android:inputType="textPassword"
+            android:paddingLeft="14dp"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/btn_login_loginPage"
-            android:layout_width="250dp"
+            android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg_btn"
