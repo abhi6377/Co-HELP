@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        guidebtn.setOnClickListener{
+            startActivity(Intent(this,OnBoardActivity::class.java))
+        }
+
         mDatabase= FirebaseDatabase.getInstance()
         databaseReference=mDatabase!!.reference!!.child("Users")
         auth = FirebaseAuth.getInstance()
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         call1.setOnClickListener {
             val intent= Intent(Intent.ACTION_DIAL)
-            val no:String =number1.text.toString()
+            val no:String = "1075"
             val temp :String = "tel:$no"
             intent.data = Uri.parse(temp)
             startActivity(intent);
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         call2.setOnClickListener {
             val intent= Intent(Intent.ACTION_DIAL)
-            val no:String =number2.text.toString()
+            val no:String ="1098"
             val temp :String = "tel:$no"
             intent.data = Uri.parse(temp)
             startActivity(intent);
@@ -56,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         call3.setOnClickListener {
             val intent= Intent(Intent.ACTION_DIAL)
-            val no:String =number3.text.toString()
+            val no:String = "08046110007"
             val temp :String = "tel:$no"
             intent.data = Uri.parse(temp)
             startActivity(intent);
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         call4.setOnClickListener {
             val intent= Intent(Intent.ACTION_DIAL)
-            val no:String =number4.text.toString()
+            val no:String ="14567"
             val temp :String = "tel:$no"
             intent.data = Uri.parse(temp)
             startActivity(intent);
