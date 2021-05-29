@@ -68,8 +68,10 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
                 if(searchList.isEmpty()){
                     Toast.makeText(this,"No post available",Toast.LENGTH_LONG).show()
                     animationempty.visibility = View.VISIBLE
+                    notfound.visibility = View.VISIBLE
                 }else{
                     animationempty.visibility = View.GONE
+                    notfound.visibility = View.GONE
                 }
                 sAdapter.notifyDataSetChanged()
 

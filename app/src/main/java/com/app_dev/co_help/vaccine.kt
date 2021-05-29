@@ -67,9 +67,11 @@ class vaccine : AppCompatActivity() {
 
                 Toast.makeText(this@vaccine, "Please enter valid pin code", Toast.LENGTH_SHORT).show()
                 animationemptyvaccine.visibility = View.VISIBLE
+                notfoundv.visibility = View.VISIBLE
             } else {
 
                 animationemptyvaccine.visibility = View.GONE
+                notfoundv.visibility = View.GONE
                 (centerList as ArrayList<CenterRvModal>).clear()
 
                 val c = Calendar.getInstance()
@@ -82,7 +84,7 @@ class vaccine : AppCompatActivity() {
                     this,
                     DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                         // after that we are making our progress bar as visible.
-                        loadingPB.setVisibility(View.VISIBLE)
+                        loadingPB.visibility = View.VISIBLE
 
                         val dateStr: String = """$dayOfMonth - ${monthOfYear + 1} - $year"""
 

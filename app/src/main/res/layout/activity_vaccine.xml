@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical"
     tools:context=".vaccine"
    >
@@ -91,12 +90,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="154dp"
         android:layout_marginEnd="0dp"
         android:visibility="gone"
-        android:layout_marginBottom="176dp"
         android:src="@drawable/empty" />
+
+    <TextView
+        android:id="@+id/notfoundv"
+        android:textSize="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/animationemptyvaccine"
+        android:text="CENTER \nNOT FOUND !"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:visibility="gone"
+       />
+
 </RelativeLayout>
