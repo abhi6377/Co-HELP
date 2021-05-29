@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".vaccine"
+    android:gravity="center_horizontal"
    >
 
     <EditText
@@ -53,18 +54,27 @@
     </TextView>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/vaccineimg">
-    </ImageView>
+        android:id="@+id/imagevaccine"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/getvaccine"
+        android:visibility="visible"></ImageView>
 
     <TextView
+        android:id="@+id/letsvaccine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/imagevaccine"
         android:text="Let's get Vaccinated !"
-
         android:textSize="35sp"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center_horizontal"

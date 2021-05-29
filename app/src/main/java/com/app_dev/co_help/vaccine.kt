@@ -67,7 +67,8 @@ class vaccine : AppCompatActivity() {
 
                 Toast.makeText(this@vaccine, "Please enter valid pin code", Toast.LENGTH_SHORT).show()
                 animationemptyvaccine.visibility = View.VISIBLE
-                notfoundv.visibility = View.VISIBLE
+                imagevaccine.visibility= View.GONE
+                letsvaccine.visibility = View.GONE
             } else {
 
                 animationemptyvaccine.visibility = View.GONE
@@ -126,8 +127,12 @@ class vaccine : AppCompatActivity() {
                     if (centerArray.length().equals(0)) {
                         Toast.makeText(this, "No Center Found", Toast.LENGTH_SHORT).show()
                         animationemptyvaccine.visibility = View.VISIBLE
+                        imagevaccine.visibility= View.GONE
+                        letsvaccine.visibility = View.GONE
                     }else{
                         animationemptyvaccine.visibility = View.GONE
+                        letsvaccine.visibility = View.GONE
+                        imagevaccine.visibility = View.GONE
                     }
                     for (i in 0 until centerArray.length()) {
 
