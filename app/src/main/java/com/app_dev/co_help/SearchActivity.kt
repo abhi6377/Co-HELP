@@ -95,7 +95,9 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
         var intent = Intent(this,SendEmailActivity::class.java)
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Post Creator's Email")
-        builder.setMessage("Please copy this email of the respective post creater to help them.\nEmail: $email")
+        builder.setMessage("Please make sure that your blood group matches with the post creator's blood group and your age is between 18-55.\n" +
+                "\n" +
+                "Send to: $email")
             .setPositiveButton("Done",
                 DialogInterface.OnClickListener { dialog, id ->
                     intent.putExtra("rEmail",email)
