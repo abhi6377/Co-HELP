@@ -29,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OnBoardActivity"/>
+        <activity android:name=".OnBoardActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".EachDistrictDataActivity" />
         <activity android:name=".DistrictWiseDataActivity" />
         <activity android:name=".EachStateDataActivity" />
