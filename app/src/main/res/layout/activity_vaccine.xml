@@ -57,7 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/vaccineimg">
-
     </ImageView>
 
     <TextView
@@ -86,17 +85,18 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/animationemptyvaccine"
-        android:layout_width="380dp"
-        android:layout_height="384dp"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="154dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="193dp"
-        android:src="@drawable/empty"
+        android:layout_marginEnd="0dp"
         android:visibility="gone"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginBottom="176dp"
+        android:src="@drawable/empty" />
 </RelativeLayout>
