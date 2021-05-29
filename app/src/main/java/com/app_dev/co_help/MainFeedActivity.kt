@@ -116,7 +116,7 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
     }
 
     override fun onMailClicked(postId: String) {
-        Toast.makeText(this, "Checking $postId", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Checking $postId", Toast.LENGTH_SHORT).show()
 
 
         val db = FirebaseFirestore.getInstance()
@@ -125,24 +125,24 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
 
         postCollections.document(postId).get().addOnSuccessListener {
             it.getString("email")?.let { it1 -> Log.d("Data: ", it1) }
-            Toast.makeText(this, "Required: ${it.getString("email")}", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, "Required: ${it.getString("email")}", Toast.LENGTH_SHORT).show()
             val rEmail = it.getString("email").toString()
             userEmail = it.getString("email").toString()
-            //intent.putExtra(rEmail,"${rEmail}")
-            Toast.makeText(this, "Required2: ${userEmail}", Toast.LENGTH_SHORT).show()
+//            //intent.putExtra(rEmail,"${rEmail}")
+//            Toast.makeText(this, "Required2: ${userEmail}", Toast.LENGTH_SHORT).show()
 
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Post Creator's Email")
-            builder.setMessage("Please copy this email of the respective post creater to help them.\nEmail: $rEmail")
+            builder.setMessage("Please make sure that your blood group matches with the post creator's blood group and your age is between 18-55.\n\nSend to: $rEmail")
                 .setPositiveButton("Done",
                     DialogInterface.OnClickListener { dialog, id ->
                         intent.putExtra("rEmail", rEmail)
                         startActivity(intent)
                     })
-                .setNegativeButton("Cancel",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        startActivity(Intent(this, MainActivity::class.java))
-                    })
+//                .setNegativeButton("Cancel",
+//                    DialogInterface.OnClickListener { dialog, id ->
+//                        startActivity(Intent(this, MainFeedActivity::class.java))
+//                    })
             builder.create()
 
             builder.show()

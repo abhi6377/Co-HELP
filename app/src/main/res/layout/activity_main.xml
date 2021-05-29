@@ -26,15 +26,14 @@
         android:id="@+id/maintv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="18dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="18dp"
         android:layout_marginTop="0dp"
+        android:gravity="center"
         android:text="DASHBOARD"
         android:textColor="@color/white"
         android:textSize="28dp"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true" />
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/helpline"
@@ -42,22 +41,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/maintv"
         android:layout_marginTop="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:elevation="5dp"
         app:cardCornerRadius="10dp"
         android:foregroundGravity="center">
 
         <LinearLayout
-            android:layout_width="338dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
+                android:layout_margin="9dp"
                 android:text="Helpline Numbers"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -65,9 +64,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp"
                 android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+
+                android:padding="0dp"
 
                 >
 
@@ -75,21 +75,21 @@
                     android:id="@+id/call1"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/iconsmedicaldoctor"/>
+                        android:background="@drawable/iconsmedicaldoctor" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Healthcare"
-                        android:textSize="10dp"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:text="Healthcare"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -102,15 +102,16 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/iconschildsafezone"/>
+                        android:background="@drawable/iconschildsafezone" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Childcare"
-                        android:textSize="10dp"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:text="Childcare"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -123,16 +124,17 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/iconsmentalhealth"/>
+                        android:background="@drawable/iconsmentalhealth" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Mental Health"
                         android:layout_marginTop="4dp"
-                        android:textSize="10dp"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:text="Mental Health"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -145,15 +147,16 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/iconselderlyperson"/>
+                        android:background="@drawable/iconselderlyperson" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Senior Citizens"
-                        android:textSize="10dp"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:text="Senior Citizens"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

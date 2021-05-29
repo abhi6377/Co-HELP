@@ -22,5 +22,22 @@
     <string name="registerPage"><b><u>Click here if you have not registered.</u></b></string>
     <string name="registerSlot"><a href="https://www.cowin.gov.in/home"><u>Click here to register your slot.</u></a></string>
 
+    <string-array name="BloodGroups">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+
+    </string-array>
+
+    <string-array name="gender">
+
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
 </resources>

@@ -1,0 +1,11 @@
+<TextView
+    android:id="@+id/textView_dropdown"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:text="TextView"
+    android:padding="16dp"
+    android:maxLines="1"
+    android:textColor="@color/black"
+    android:textSize="16sp"/>

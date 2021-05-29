@@ -15,7 +15,8 @@ class SendEmailActivity : AppCompatActivity() {
         /* CHANGED BY ME 9 - getting rEmail from MainFeedsActivity from onMailClicked */
         val intent = getIntent()
         val rEmail = intent.getStringExtra("rEmail")
-        Toast.makeText(this,"EmailIdSEA: $rEmail", Toast.LENGTH_SHORT).show()
+        recipientEmail.text="Recipient: $rEmail"
+//        Toast.makeText(this,"EmailIdSEA: $rEmail", Toast.LENGTH_SHORT).show()
         sendEmailBtn.setOnClickListener{
             val recipient = rEmail
             val subject = subject.text.toString()
@@ -42,7 +43,7 @@ class SendEmailActivity : AppCompatActivity() {
 
         intent.putExtra(
             Intent.EXTRA_TEXT,
-            "Hello \n I would like to offer you help.\n Contact me via this email"
+            "Hello, \n I would like to offer you help.\n Contact me via this email"
         )
 
         try {
