@@ -22,7 +22,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="178dp"
+        android:layout_height="182dp"
         android:background="#75bec1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,7 @@
         android:gravity="center_horizontal"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:layout_marginTop="3dp"
+
         android:textColor="@color/white"
         />
     <TextView
@@ -70,7 +70,6 @@
         android:gravity="center_horizontal"
         android:textSize="36dp"
         android:textStyle="bold"
-        android:layout_marginTop="3dp"
         android:textColor="@color/white"
         />
 
