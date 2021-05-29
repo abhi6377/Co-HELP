@@ -17,12 +17,14 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/splash_image"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_coronavirus" />
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/corona" />
 
         <TextView
             android:id="@+id/title_tv"
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="Developed by Priyanka n Abhilasha"
+            android:text="Developed by:\n Priyanka n Abhilasha"
             android:textColor="#fff"
             android:textSize="13sp" />
 
