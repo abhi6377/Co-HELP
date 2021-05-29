@@ -27,9 +27,9 @@ class OnBoardActivity : AppCompatActivity() {
 
         val onBoardingData: MutableList<OnBoardingData> = ArrayList()
 
-        onBoardingData.add(OnBoardingData("Covid Statistics","This provides you with the realtime covid statistics around the globe.",R.drawable.analysis))
-        onBoardingData.add(OnBoardingData("Nearby Vaccine Center","Lets you know the vaccine centers available within your area.",R.drawable.medicalshield))
-        onBoardingData.add(OnBoardingData("Plasma Donation","Create a community where people can share and help each other. Just click the mail button and let them know that you are here to help.",R.drawable.blooddonation))
+        onBoardingData.add(OnBoardingData("Covid Statistics","This provides you with the realtime covid statistics around the globe.",R.drawable.pathogen))
+        onBoardingData.add(OnBoardingData("Nearby Vaccine Center","Lets you know the vaccine centers available within your area.",R.drawable.vaccine))
+        onBoardingData.add(OnBoardingData("Plasma Donation","Create a community where people can share and help each other. Just click the mail icon in their post and let them know that you are here to help.",R.drawable.bloodtest))
 
         if (restorePrefData()){
             val intent = Intent(applicationContext,MainActivity::class.java)
