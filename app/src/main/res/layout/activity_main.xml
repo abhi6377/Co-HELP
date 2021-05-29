@@ -165,7 +165,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/robort"
         android:layout_width="248dp"
         android:layout_height="245dp"
@@ -175,7 +175,7 @@
         android:layout_marginStart="82dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="81dp"
-        android:background="@drawable/ic_iconsreddit"
+        android:src="@drawable/robot"
         android:foregroundGravity="center_horizontal"
         android:scaleType="fitXY"
         android:layout_alignParentLeft="true"

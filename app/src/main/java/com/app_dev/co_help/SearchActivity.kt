@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app_dev.co_help.Adapters.SearchAdapter
@@ -61,6 +62,12 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
                 for (documents in it.result!!){
                     post = documents.toObject(Post::class.java)
                     searchList.add(post)
+                }
+                if(searchList.isEmpty()){
+                    Toast.makeText(this,"No post available",Toast.LENGTH_LONG).show()
+                    animationempty.visibility = View.VISIBLE
+                }else{
+                    animationempty.visibility = View.GONE
                 }
                 sAdapter.notifyDataSetChanged()
 

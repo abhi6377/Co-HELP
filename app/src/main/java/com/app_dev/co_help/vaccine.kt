@@ -16,6 +16,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.app_dev.co_help.Adapters.CenterRVAdapter
+import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.activity_vaccine.*
 import org.json.JSONException
 import java.util.*
@@ -65,8 +66,10 @@ class vaccine : AppCompatActivity() {
             if (pinCode.length != 6) {
 
                 Toast.makeText(this@vaccine, "Please enter valid pin code", Toast.LENGTH_SHORT).show()
+                animationemptyvaccine.visibility = View.VISIBLE
             } else {
 
+                animationemptyvaccine.visibility = View.GONE
                 (centerList as ArrayList<CenterRvModal>).clear()
 
                 val c = Calendar.getInstance()
@@ -120,6 +123,9 @@ class vaccine : AppCompatActivity() {
                     // the zero length indicates that there is no data for the given pincode.
                     if (centerArray.length().equals(0)) {
                         Toast.makeText(this, "No Center Found", Toast.LENGTH_SHORT).show()
+                        animationemptyvaccine.visibility = View.VISIBLE
+                    }else{
+                        animationemptyvaccine.visibility = View.GONE
                     }
                     for (i in 0 until centerArray.length()) {
 
