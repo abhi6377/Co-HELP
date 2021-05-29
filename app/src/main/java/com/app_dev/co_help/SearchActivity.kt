@@ -34,7 +34,7 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
 
         intent.getStringExtra("googleEmail")
 
-        filter(searchCityS.text)
+
         btn_SearchS.setOnClickListener{
             filter(searchCityS.text)
         }
