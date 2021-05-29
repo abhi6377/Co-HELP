@@ -24,6 +24,7 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
     private lateinit var searchList: ArrayList<Post>
     private lateinit var post: Post
 
+    @ExperimentalStdlibApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
