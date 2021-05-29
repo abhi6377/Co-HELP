@@ -40,7 +40,7 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>, private val listener:
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int, model: Post) {
         holder.postText.text = model.GetBloodGr()
-        holder.postCity.text = model.GetCity()
+        holder.postCity.text = model.GetCity().capitalize()
         holder.userText.text = model.GetCreatedBy().toString()
         holder.createdAt.text = Utils.getTimeAgo(model.createdAt)
         holder.postGender.text = model.GetGender()

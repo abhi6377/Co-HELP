@@ -70,7 +70,7 @@ class CreatePostActivity : AppCompatActivity() {
 
         postButton.setOnClickListener {
             val input = bloodgrpselection.text.toString().uppercase().trim()
-            val inputCity = postInputCity.text.toString().trim()
+            val inputCity = postInputCity.text.toString().lowercase().trim()
             val inputAge = postInputAge.text.toString().trim()
             val inputGender = Gender.text.toString().trim()
             if (input.isNotEmpty() && inputCity.isNotEmpty()) {

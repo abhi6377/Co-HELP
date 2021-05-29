@@ -38,7 +38,7 @@ class SearchAdapter(private val searchList: ArrayList<Post>, private val listene
 
 
         holder.postText.text = searchList[position].bloodGr
-        holder.postCity.text = searchList[position].city
+        holder.postCity.text = searchList[position].city.capitalize()
         holder.userText.text = searchList[position].createdBy.displayName
         holder.createdAt.text = Utils.getTimeAgo(searchList[position].createdAt)
         holder.postGender.text = searchList[position].gender

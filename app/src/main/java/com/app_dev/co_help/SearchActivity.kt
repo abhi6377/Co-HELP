@@ -40,12 +40,13 @@ class SearchActivity : AppCompatActivity(), SearchAdapter.OnMailClickListenerS {
         }
     }
 
+    @ExperimentalStdlibApi
     private fun filter(text: Editable) {
 
         searchList = ArrayList<Post>()
         var postDao = PostDao()
         val postsCollections = postDao.postCollections
-        val query = postsCollections.whereEqualTo("city","$text")
+        val query = postsCollections.whereEqualTo("city","${text.toString().lowercase()}")
 
         query.get().addOnSuccessListener {
             for(document in it){
