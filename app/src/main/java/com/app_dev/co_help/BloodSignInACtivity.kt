@@ -1,7 +1,10 @@
 package com.app_dev.co_help
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app_dev.co_help.Daos.UserDao
@@ -18,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_blood_sign_in.*
 
 class BloodSignInACtivity : AppCompatActivity() {
 
+    private var progressDialog: ProgressDialog? = null
     var auth=FirebaseAuth.getInstance()
     private  lateinit var googleSignInClient: GoogleSignInClient
     private val  RC_SIGN_IN:Int = 123
@@ -85,6 +89,7 @@ class BloodSignInACtivity : AppCompatActivity() {
         auth.signInWithCredential(credential).addOnCompleteListener { task->
             if(task.isSuccessful) {
 
+                ShowDialog(this)
                 if(firebaseUser!=null) {
                     val user = com.app_dev.co_help.Models.User(
                         firebaseUser.uid,
@@ -95,9 +100,11 @@ class BloodSignInACtivity : AppCompatActivity() {
                     val usersDao = UserDao()
                     usersDao.addUser(user)
 
+
                     val intent = Intent(this, MainFeedActivity::class.java)
                     startActivity(intent)
                     finish()
+                    DismissDialog()
                 }
             }
         }
@@ -121,6 +128,19 @@ class BloodSignInACtivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    fun ShowDialog(context: Context?) {
+
+        progressDialog = ProgressDialog(context)
+        progressDialog!!.show()
+        progressDialog!!.setContentView(R.layout.progress_dialog)
+        progressDialog!!.setCanceledOnTouchOutside(false)
+        progressDialog!!.window!!.setBackgroundDrawableResource(R.color.tranparent)
+    }
+
+    fun DismissDialog() {
+        progressDialog!!.dismiss()
     }
 
 }
