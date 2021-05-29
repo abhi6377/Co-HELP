@@ -5,19 +5,25 @@
     <group android:id="@+id/grp1">
     <item
         android:id="@+id/Item1"
-        android:title="Covid Cases Statistics">
+        android:icon="@drawable/piechart"
+        android:title="Covid Cases Statistics"
+        >
+
 
     </item>
 
+
     <item
         android:id="@+id/Item2"
-        android:title="Blood Plasma Availability">
+        android:title="Blood Plasma Availability"
+        android:icon="@drawable/bloodsample">
 
     </item>
 
     <item
         android:id="@+id/Item3"
-        android:title="Vaccine Availability">
+        android:title="Vaccine Availability"
+        android:icon="@drawable/syringe">
 
     </item>
     </group>
@@ -26,6 +32,7 @@
         <item
             android:id="@+id/LogOut"
             android:title="Log Out"
+            android:icon="@drawable/logout"
             app:showAsAction="always">
 
         </item>

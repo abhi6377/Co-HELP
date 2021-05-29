@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="@color/purple_200"
+    android:orientation="vertical"
+    android:background="#273746"
     >
+
 
     <TextView
         android:id="@+id/textView"
@@ -15,34 +17,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="0dp"
         android:text="Co-HELP"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,UnknownId">
-
-    </TextView>
-
-
-    <TextView
-        android:id="@+id/username_nav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="7dp"
-        android:text="Username"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints,UnknownId">
+        >
 
     </TextView>
 
@@ -50,12 +30,24 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:text="Creating Peace"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/username_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="Creating Peace"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="7dp"
+        android:text="Username"
+        android:textColor="@color/purple_200"
+        android:textSize="25sp"
+        android:textStyle="bold">
 
+    </TextView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

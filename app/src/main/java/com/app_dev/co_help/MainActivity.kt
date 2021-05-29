@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
-
+        Nav_View.itemIconTintList=null
 
         Nav_View.setNavigationItemSelectedListener {
             when (it.itemId) {
@@ -95,11 +95,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.LogOut -> {
-//                    val editor:SharedPreferences.Editor=preferences.edit()
-//                    editor.putBoolean("CHECKBOX",false)
-//
-//                    editor.clear()
-//                    editor.apply()
+
                     FirebaseAuth.getInstance().signOut()
 
                     val intent= Intent(this,loginactivity::class.java)
