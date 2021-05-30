@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".CreatePostActivity">
+    tools:context=".CreatePostActivity"
+    android:background="@color/white">
 
     <com.google.android.material.textfield.TextInputLayout
 

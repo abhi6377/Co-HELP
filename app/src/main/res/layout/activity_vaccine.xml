@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".vaccine"
     android:gravity="center_horizontal"
+    android:background="@color/white"
    >
 
     <EditText
@@ -17,7 +18,8 @@
         android:layout_toStartOf="@id/idBtnSearch"
         android:layout_toLeftOf="@id/idBtnSearch"
         android:hint="Enter PinCode"
-        android:inputType="number" />
+        android:inputType="number"
+        android:background="@color/white"/>
 
     <!--button for searchng the data-->
     <Button
