@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app_dev.co_help.Daos.PostDao
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main_feed.*
 import kotlinx.android.synthetic.main.activity_my_feeds.*
 
 class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
@@ -38,6 +40,7 @@ class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
     }
 
     private fun setUp() {
+        var c : Int = 0
         auth = Firebase.auth
         val currentUserEmail = auth.currentUser?.email
         postDao = PostDao()
@@ -48,6 +51,7 @@ class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
         query.get().addOnSuccessListener {
             for(document in it){
                 Log.d("Post Id" , "${document.data}")
+                c++
             }
         }
             .addOnFailureListener{
@@ -64,6 +68,14 @@ class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
                 Toast.makeText(this,"Failed Search .. Try different city name ", Toast.LENGTH_SHORT).show()
             }
         })
+
+        if(c==0){
+            noPostsmy.visibility = View.VISIBLE
+            noPoststvmy.visibility = View.VISIBLE
+        }else{
+            noPostsmy.visibility = View.GONE
+            noPoststvmy.visibility = View.GONE
+        }
 
         myAdapter = MyPostAdapter(recyclerViewOptions,this)
 

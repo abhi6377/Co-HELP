@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyFeedsActivity">
+    tools:context=".MyFeedsActivity"
+    android:background="#f1f1f6">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -14,5 +15,31 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/noPostsmy"
+        android:layout_width="334dp"
+        android:layout_height="345dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="31dp"
+        android:src="@drawable/emptystatus"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/noPoststvmy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noPostsmy"
+        android:text="You have no posts.\nGo ahead, Create your own post. "
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:textSize="24dp"/>
 
 </RelativeLayout>

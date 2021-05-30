@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFeedActivity">
+    tools:context=".MainFeedActivity"
+    android:background="#f1f1f6">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -72,5 +73,31 @@
         app:srcCompat="@drawable/ic_baseline_send_24"
         tools:ignore="VectorDrawableCompat"
         android:visibility="invisible"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/noPosts"
+        android:layout_width="334dp"
+        android:layout_height="345dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="31dp"
+        android:src="@drawable/emptystatus"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/noPoststv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noPosts"
+        android:text="No Post Available.\n Be the first one to post."
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:textSize="24dp"/>
 
 </RelativeLayout>

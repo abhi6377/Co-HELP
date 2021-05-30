@@ -96,16 +96,35 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
     }
 
     private fun setUpRecyclerView() {
+        var c : Int = 0
         postDao = PostDao()
         val postsCollections = postDao.postCollections
         val query = postsCollections.orderBy("createdAt", Query.Direction.DESCENDING)
-        val recyclerViewOptions =
-            FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post::class.java).build()
+        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post::class.java).build()
+
+        query.get().addOnSuccessListener {
+            for(document in it){
+                Log.d("Post Id" , "${document.data}")
+                c++
+            }
+        }
+            .addOnFailureListener{
+                Log.w("Failure", "Error getting documents",it)
+            }
+
+        if(c==0){
+            noPosts.visibility = View.VISIBLE
+            noPoststv.visibility = View.VISIBLE
+        }else{
+            noPosts.visibility = View.GONE
+            noPoststv.visibility = View.GONE
+        }
 
         adapter = PostAdapter(recyclerViewOptions,this)
-
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+
     }
 
     override fun onStart() {
