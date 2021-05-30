@@ -56,6 +56,10 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
             intent.putExtra("googleEmail", googleEmail)
 
         }
+
+        myfeedsbtn.setOnClickListener{
+            startActivity(Intent(this,MyFeedsActivity::class.java))
+        }
     }
 
     private fun onMenuClicked() {
@@ -68,10 +72,12 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
         if(!clicked){
             btn_Search.startAnimation(fromBottom)
             fab.startAnimation(fromBottom)
+            myfeedsbtn.startAnimation(fromBottom)
             fabMain.startAnimation(rotateOpen)
         }else{
             btn_Search.startAnimation(toBottom)
             fab.startAnimation(toBottom)
+            myfeedsbtn.startAnimation(toBottom)
             fabMain.startAnimation(rotateClose)
         }
     }
@@ -80,9 +86,11 @@ class MainFeedActivity : AppCompatActivity(),PostAdapter.OnMailClickListener {
         if(!clicked){
             fab.visibility = View.VISIBLE
             btn_Search.visibility = View.VISIBLE
+            myfeedsbtn.visibility = View.VISIBLE
         }else{
             fab.visibility = View.INVISIBLE
             btn_Search.visibility = View.INVISIBLE
+            myfeedsbtn.visibility = View.INVISIBLE
         }
 
     }

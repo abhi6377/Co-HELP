@@ -48,6 +48,7 @@
         android:textColorLink="@color/cardBg"
         android:layout_marginTop="73dp"
         android:layout_marginLeft="20dp"
+
         android:background="@drawable/underline"
 
         >
