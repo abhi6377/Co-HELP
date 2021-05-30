@@ -37,7 +37,7 @@ class loginactivity : AppCompatActivity() {
             } else {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) {
-                        if (it.isSuccessful) {
+                        if (it.isSuccessful && auth.currentUser!!.isEmailVerified) {
 
                             Email.setText("")
                             Password.setText("")
@@ -46,7 +46,15 @@ class loginactivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
 
-                        } else {
+                        } else if(!auth.currentUser!!.isEmailVerified){
+                            Toast.makeText(
+                                applicationContext,
+                                "You have not verified your Email",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+                        else{
                             Toast.makeText(
                                 applicationContext,
                                 "Email or password invalid",
@@ -65,19 +73,12 @@ class loginactivity : AppCompatActivity() {
 
         }
 
+        forgotpassword.setOnClickListener {
+            startActivity(Intent(this@loginactivity,ForgotPassword::class.java))
+
+        }
+
 }
-//    private var doubleBackToExitPressedOnce = false
-//    override fun onBackPressed() {
-//        if (doubleBackToExitPressedOnce) {
-//            super.onBackPressed()
-//            return
-//        }
-//
-//        this.doubleBackToExitPressedOnce = true
-//        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
-//
-//        android.os.Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
-//    }
 
     override fun onBackPressed() {
         AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")

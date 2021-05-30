@@ -7,8 +7,10 @@ import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_register.*
 
 class registerActivity : AppCompatActivity() {
@@ -27,13 +29,13 @@ class registerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_login_loginPage.setOnClickListener {
+        btn_signup_signupPage.setOnClickListener {
             val username = etName.text.toString()
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
 
-            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
+            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword) ) {
                 Toast.makeText(applicationContext, "Please enter all the details!", Toast.LENGTH_SHORT)
                     .show()
             }
@@ -48,7 +50,12 @@ class registerActivity : AppCompatActivity() {
                 ).show()
 
             }
-            if(username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() && password==confirmPassword)
+
+            if(!(verifyEmail.isChecked))
+            {
+                Toast.makeText(applicationContext,"Select the checkbox to send verification link to your Email address",Toast.LENGTH_SHORT).show()
+            }
+            if(username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() && password==confirmPassword && verifyEmail.isChecked)
                 registerUser(username, email, password)
 
 
@@ -58,9 +65,19 @@ class registerActivity : AppCompatActivity() {
 
     private fun registerUser(userName:String,email:String,password:String)
     {
+
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
+
+                    auth.currentUser?.sendEmailVerification()
+                        ?.addOnCompleteListener {task ->
+                            if(task.isSuccessful){
+                                Toast.makeText(applicationContext,"Email Sent.Please verify your email",Toast.LENGTH_SHORT).show()
+
+                            }
+                        }
+
                     val user:FirebaseUser? = auth.currentUser
                     val userId:String = user!!.uid
 
@@ -83,6 +100,9 @@ class registerActivity : AppCompatActivity() {
                         }
                     }
 
+                }
+                else{
+                    Toast.makeText(applicationContext, it.exception!!.message.toString(),Toast.LENGTH_SHORT).show()
                 }
             }
     }

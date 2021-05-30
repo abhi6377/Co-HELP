@@ -76,11 +76,13 @@
             android:id="@+id/etName"
             android:layout_width="260dp"
             android:layout_height="38dp"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:inputType="textPersonName"
             android:background="@drawable/edittext_round_new_rg"
             android:drawableLeft="@drawable/ic_baseline_person_24_g"
             android:drawablePadding="10dp"
             android:hint="Name"
+
             android:paddingLeft="14dp"
             android:textSize="15dp" />
 
@@ -89,14 +91,24 @@
             android:layout_width="260dp"
             android:layout_height="38dp"
             android:layout_margin="5dp"
+
             android:background="@drawable/edittext_round_new_rg"
             android:drawableStart="@drawable/ic_baseline_email_g_24"
-            android:drawableLeft="@drawable/ic_baseline_email_g_24"
+
             android:drawablePadding="10dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:paddingLeft="14dp"
             android:textSize="15dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#B9B8B8"
+            android:hint=""
+            app:passwordToggleTint="#6AA761"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/etPassword"
@@ -105,12 +117,22 @@
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
-            android:drawableLeft="@drawable/ic_baseline_vpn_key_g_24"
+            android:drawableStart="@drawable/ic_baseline_vpn_key_g_24"
             android:drawablePadding="10dp"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="14dp"
             android:textSize="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#B9B8B8"
+            android:hint=""
+            app:passwordToggleTint="#6AA761"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/etConfirmPassword"
@@ -118,18 +140,28 @@
             android:layout_height="38dp"
             android:layout_margin="5dp"
             android:background="@drawable/edittext_round_new_rg"
-            android:drawableLeft="@drawable/ic_baseline_vpn_key_g_24"
+            android:drawableStart="@drawable/ic_baseline_vpn_key_g_24"
             android:drawablePadding="10dp"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:paddingLeft="14dp"
             android:textSize="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/verifyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Verification Link to your Email "
+            android:textColor="@color/black">
+
+        </CheckBox>
 
         <Button
-            android:id="@+id/btn_login_loginPage"
+            android:id="@+id/btn_signup_signupPage"
             android:layout_width="260dp"
             android:layout_height="38dp"
-            android:layout_margin="5dp"
+            android:layout_margin="7dp"
             android:background="@drawable/edittext_round_new_rg_btn"
             android:text="SIGN UP" />
 

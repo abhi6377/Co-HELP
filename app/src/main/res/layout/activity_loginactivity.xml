@@ -84,6 +84,8 @@
             android:drawablePadding="10dp"
             android:hint="Email"
             android:paddingLeft="14dp"
+            android:inputType="textEmailAddress"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/ic_baseline_person_24" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -102,7 +104,7 @@
             android:textSize="12dp"
             android:background="@drawable/edittext_round_new"
             android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:hint="Password"
+            android:hint="Password "
 
             android:drawablePadding="10dp"
 
@@ -112,12 +114,36 @@
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             />
         </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Minimum 6 characters"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp">
 
+        </TextView>
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:layout_marginLeft="60dp"
+            android:textSize="12sp"
+            android:background="@drawable/underline"
+            >
+
+        </TextView>
+
+    </LinearLayout>
         <Button
             android:id="@+id/btn_login_loginPage"
             android:layout_width="270dp"
             android:layout_height="40dp"
-            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:background="@drawable/edittext_round_new_btn"
             android:text="SIGN IN" />
