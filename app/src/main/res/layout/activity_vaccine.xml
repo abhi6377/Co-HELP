@@ -48,7 +48,6 @@
         android:textColorLink="@color/cardBg"
         android:layout_marginTop="73dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/underline"
 
         >
     </TextView>
@@ -65,7 +64,9 @@
         android:layout_marginRight="21dp"
         android:foregroundGravity="center"
         android:src="@drawable/getvaccine"
-        android:visibility="visible"></ImageView>
+        android:visibility="visible">
+
+    </ImageView>
 
     <TextView
         android:id="@+id/letsvaccine"
@@ -87,7 +88,7 @@
         android:id="@+id/centersRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/idEdtPinCode"
+        android:layout_below="@id/registerSlot"
 
         tools:listitem="@layout/center_rv_item"
         />
