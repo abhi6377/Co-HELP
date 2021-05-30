@@ -1,6 +1,8 @@
 package com.app_dev.co_help
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -96,13 +98,15 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.LogOut -> {
 
-                    FirebaseAuth.getInstance().signOut()
-
-                    val intent= Intent(this,loginactivity::class.java)
-                    intent.putExtra("remember",false)
-
-                    startActivity(intent)
-                    finish()
+                    AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Exit")
+                        .setMessage("Are you sure?")
+                        .setPositiveButton("yes", DialogInterface.OnClickListener { dialog, which ->
+                            val intent = Intent(Intent.ACTION_MAIN)
+                            intent.addCategory(Intent.CATEGORY_HOME)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                            startActivity(intent)
+                            finish()
+                        }).setNegativeButton("no", null).show()
 
                 }
 

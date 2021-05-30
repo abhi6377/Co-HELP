@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/Item2"
-        android:title="Blood Plasma Availability"
+        android:title="Blood Plasma Requirement"
         android:icon="@drawable/bloodsample">
 
     </item>
@@ -31,7 +31,7 @@
     <group android:id="@+id/grp2">
         <item
             android:id="@+id/LogOut"
-            android:title="Log Out"
+            android:title="Exit"
             android:icon="@drawable/logout"
             app:showAsAction="always">
 

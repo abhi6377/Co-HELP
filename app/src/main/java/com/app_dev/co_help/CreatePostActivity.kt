@@ -29,7 +29,6 @@ class CreatePostActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
-
         val option =ArrayList<String>()
         option.add("AB+")
         option.add("AB-")
@@ -81,8 +80,6 @@ class CreatePostActivity : AppCompatActivity() {
 
         }
     }
-
-
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
