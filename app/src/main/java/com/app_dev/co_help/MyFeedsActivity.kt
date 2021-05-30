@@ -29,6 +29,10 @@ class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_feeds)
 
+        supportActionBar!!.title = "My Posts"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+
         setUp()
         auth = Firebase.auth
     }
@@ -102,5 +106,9 @@ class MyFeedsActivity : AppCompatActivity(), OnDelClickListener {
         builder.create()
 
         builder.show()
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
