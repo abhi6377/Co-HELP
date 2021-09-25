@@ -6,7 +6,7 @@ This would help reduce the death rate of critical patients and also promote well
 of the society as people in need would get a platform to seek help from different individuals. 
 
 We have 3 main facilities available in this app : 
-1. Covid Cases Statistics (It gives the current stats of covid cases all over World,in india in different states ,districts and cities of India,built using Rest API)
+1. Covid Cases Statistics (It gives the current stats of covid cases all over World,in india in different states ,districts and cities of India,built using Public API)
 
 2. Vaccination Centers Availability (It tells about the vaccination centers near you and gives the timing for slots available,built using Rest API)
 
